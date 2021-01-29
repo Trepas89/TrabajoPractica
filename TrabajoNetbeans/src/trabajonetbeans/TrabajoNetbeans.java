@@ -19,7 +19,13 @@ public class TrabajoNetbeans {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
-        int Numeros[] = new int[10];
+        int s=11;
+        do{
+        System.out.println("Cuantos espacios quieres reservar,recuerda que como maximo se pueden 10");
+        s=sc.nextInt();
+        }while(s>10 || s<=0);
+        
+        int Numeros[] = new int[s];
         int j = 0;
 
         for (int i = 0; i < Numeros.length; i++) {
