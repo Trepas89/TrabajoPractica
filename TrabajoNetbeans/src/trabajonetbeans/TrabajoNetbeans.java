@@ -20,10 +20,7 @@ public class TrabajoNetbeans {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
         int s=11;
-        do{
-        System.out.println("Cuantos espacios quieres reservar,recuerda que como maximo se pueden 10");
-        s=sc.nextInt();
-        }while(s>10 || s<=0);
+        s = Validacion(s, sc);
         
         int Numeros[] = new int[s];
         int j = 0;
@@ -49,5 +46,30 @@ public class TrabajoNetbeans {
         for (int i = 0; i < Numeros.length; i++) {
             System.out.println("El mumero es " + Numeros[i]);
         }
+        
+        Comprobar_numero(sc, Numeros);
+        
+    }
+
+    public static void Comprobar_numero(Scanner sc, int[] Numeros) {
+        System.out.println("Escribe el numero que quieres ver si esta en la array");
+        int num=sc.nextInt();
+        for (int i = 0; i < Numeros.length; i++) {
+            if(num==Numeros[i]){
+                System.out.println("El numero esta en la array");
+                break;
+            }
+            if(i==Numeros.length-1){
+                System.out.println("Ese numero no se encuentra el la array");
+            }
+        }
+    }
+
+    public static int Validacion(int s, Scanner sc) {
+        do{
+            System.out.println("Cuantos espacios quieres reservar,recuerda que como maximo se pueden 10");
+            s=sc.nextInt();
+        }while(s>10 || s<=0);
+        return s;
     }
 }
